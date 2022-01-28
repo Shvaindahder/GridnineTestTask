@@ -21,15 +21,6 @@ public class Main {
         return flightManager.getFilteredFlights();
     }
 
-    public static List<Flight> getFlightsWaitingTimeLess2hours(List<Flight> flights) {
-        BaseFilter filters = new BaseFilter();
-        filters.addFilter(Filters.timeInGround(Duration.ofHours(2)));
-
-        FlightManager flightManager = new FlightManager(filters, flights);
-
-        return flightManager.getFilteredFlights();
-    }
-
     public static void main(String[] args) {
         List<Flight> flights = FlightBuilder.createFlights();
         FlightManager flightManager = new FlightManager(flights);
